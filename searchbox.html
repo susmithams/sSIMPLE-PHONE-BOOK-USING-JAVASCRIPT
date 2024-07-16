@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- script tags -->
+ <script>
+    function myfunction(){
+        var input,filter,ul,li,a,i,txtValue;
+
+        input=document.getElementById("myInput");//input field
+
+        filter=input.value.toUpperCase();//input ill kodutha data ne uppercase aakki
+
+        
+        ul=document.getElementById("myUL"); //ul selected
+
+
+        li=ul.getElementsByTagName("li");//[li,li,li,li]list elements ne select cheyyuka
+
+
+        //for list iteration
+         for(i=0;i<li.length;i++){
+           a= li[i].getElementsByTagName("a")[0];
+            //it returns a list.li[0]=[a]for removing list and getting the value only we use indexposition[0] then we get only a
+
+
+             
+            txtValue=a.textContent || a.innerText ;  //select complete text or inner letters
+            //the textContent will return the complete text.however the innerText will only return the visible text content
+
+
+            if(txtValue.toUpperCase().indexOf(filter)>-1){ //DONA.idexOf('DONA')
+
+                li[i].style.display="";  //content present aanel display cheyyuka (or using block)
+            //style.display to an empty string essentially means making the element visible according to the default display style defined in css
+            }
+            else{
+                li[i].style.display="none";
+            }
+         }
+
+    }
+ </script>
+
+
+
+
+
+
+
+    <style>
+        .container-fluid{
+            background-image:url("images/background.webp");
+            height:100vh;
+        }
+        h1{
+            color:#ffff;
+            font-size:xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 40px;
+        }
+        li a {
+           color: #fff;
+           font-size: larger;
+           line-height:40px;
+           text-decoration: none;
+           font-family: 'Times New Roman', Times, serif;
+        }
+        input{
+            width: 300px;
+            font-size:larger;
+        
+        }
+      </style>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+
+    <h1 align="center">MY PHONEBOOK</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+
+
+        </div>
+        <div class="col-4">
+            <div class="search text-white" align="center">
+    <div class="input-group">
+        <span class="input-group-text" ><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input  type="text"id="myInput" onkeyup="myfunction()"  placeholder="Search for Names......">
+    </div>
+   
+<ul id="myUL" type="none">
+    <li><a href="#">Adele   9744566857</a></li>
+    <li><a href="#">Agnes    9744234567</a></li>
+    <li><a href="#">Anthony  9744234568</a></li>
+    <li><a href="#">Andrew   9744234587</a></li>
+    <li><a href="#">Alexander  9744234564</a></li>
+    <li><a href="#">Aaron   9744234563</a></li>
+    <li><a href="#">Atlas    9744234512</a></li>
+    <li><a href="#">Adam  9744234561</a></li>
+    <li><a href="#">Austin  9744234530</a></li>
+    <li><a href="#">Arthur 9744234556</a></li>
+    
+
+
+
+    <li><a href="#">Billy 9994566790</a></li>
+    <li><a href="#">babu 7354566789</a></li>
+    <li><a href="#">bindhu 7357896543</a></li>
+    <li><a href="#">balu 9744567898</a></li>
+    <li><a href="#">bini 9997865432</a></li>
+    <li><a href="#">bihal 9998765437</a></li>
+ 
+    
+    <li><a href="#">Bobby 9744567890</a></li>
+
+
+    <li><a href="#">Calvin 7356789088</a></li>
+    <li><a href="#">cristy 7355656788</a></li>   
+    <li><a href="#">cyril 98067845667</a></li>
+    <li><a href="#">clinto 9806785432</a></li>
+    <li><a href="#">cinta 9744567893</a></li>
+
+    
+
+    <li><a href="#">Dixon 9744567890</a></li>
+    <li><a href="#">Dona 9744123445</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+    
+</body>
+</html>
